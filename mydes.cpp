@@ -8,7 +8,7 @@
 
 /* Compilation */
 /* g++ mydes.cpp -o mydes -lcrypto */
-
+/* Or use provided Makefile        */
 /**
  * Converts an array of 8 characters
  * (i.e. 4 bytes/32 bits)

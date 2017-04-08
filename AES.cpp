@@ -19,7 +19,7 @@ bool AES::setKey(const unsigned char* keyArray)
 	// the first byte is used to indicate whether we are encrypting or
 	// decrypting. E.g., if the first byte is 0, then use AES_set_encrypt_key(...).
 
-  //Encrypting
+  /* Encrypting */
   
   if (keyArray[0] == 0x00) {
     if (AES_set_encrypt_key(keyArray + 1, 128, &(this->enc_key)) !=0) {
@@ -29,7 +29,7 @@ bool AES::setKey(const unsigned char* keyArray)
     return true;
   }
 
-  //Decrypting
+  /* Decrypting */
   
   else if (keyArray[0] == 0x01) {
     AES_KEY dec_key;
@@ -65,6 +65,8 @@ unsigned char* AES::encrypt(const unsigned char* plaintext)
 unsigned char* AES::decrypt(const unsigned char* ciphertext)
 {
   unsigned char* plaintext = new unsigned char[16];
+  fprintf(stderr, "Start decrypting\n");
   AES_ecb_encrypt(ciphertext, plaintext, &(this->dec_key), AES_DECRYPT);
+  fprintf(stderr, "Done decrypting\n");
   return plaintext;		
 }

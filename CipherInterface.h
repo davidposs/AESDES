@@ -11,39 +11,37 @@ using namespace std;
  */
 class CipherInterface
 {
-	/** The public members **/
-	public:
+    /** The public members **/
+    public:
 
-		/**
-		 * The default constructor
-		 */
-		CipherInterface(){}
-		
-		
-		/**
-		 * Sets the key to use
-		 * @param key - the key to use
-		 * @return - True if the key is valid and False otherwise
-		 */
-		virtual bool setKey(const unsigned char* key){ return false;  }
+        /*  The default constructor */
+        CipherInterface(){}
 
-		/**	
-		 * Encrypts a plaintext string
-		 * @param plaintext - the plaintext string
-		 * @return - the encrypted ciphertext string
-		 */
-		virtual unsigned char* encrypt(const unsigned char* plaintext){ return NULL; }
 
-		/**
-		 * Decrypts a string of ciphertext
-		 * @param ciphertext - the ciphertext
-		 * @return - the plaintext
-		 */
-		virtual unsigned char* decrypt(const unsigned char* ciphertext) { return NULL; }
+        /**
+         * Sets the key to use
+         * @param key - the key to use
+         * @return - True if the key is valid and False otherwise
+         */
+        virtual bool setKey(const unsigned char* key){ return false;  }
 
-		/* The protected members */
-	protected:
-	
+        /**	
+         * Encrypts a plaintext string
+         * @param plaintext - the plaintext string
+         * @return - the encrypted ciphertext string
+         */
+        virtual unsigned char* encrypt(const unsigned char* plaintext){ return NULL; }
+
+        /**
+         * Decrypts a string of ciphertext
+         * @param ciphertext - the ciphertext
+         * @return - the plaintext
+         */
+        virtual unsigned char* decrypt(const unsigned char* ciphertext) { return NULL; }
+
+        /* The protected members */
+    protected:
+
 };
 
 #endif

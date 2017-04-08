@@ -22,6 +22,5 @@ AES.o:	AES.cpp AES.h
 RSA.o:	RSA.cpp RSA.h
 	g++ -g -c RSA.cpp
 
-
 clean:
 	rm -rf *.o cipher myaes mydes
